@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App | Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="logo">
+                <i class="fas fa-comments"></i>
+                <h1>QuickChat</h1>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="register">Register</button>
+                <button class="tab-btn" data-tab="login">Login</button>
+            </div>
+            
+            <!-- Registration Form -->
+            <form id="register-form" class="auth-form active">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="reg-username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="reg-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="reg-password" placeholder="Password (min. 6 characters)" minlength="6" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-user-plus"></i> Create Account & Start Chat
+                </button>
+            </form>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login to Chat
+                </button>
+            </form>
+            
+            <div class="room-options">
+                <button id="create-room-btn" class="room-option-btn">
+                    <i class="fas fa-plus-circle"></i> Create New Chat Room
+                </button>
+                <div class="separator">OR</div>
+                <div class="input-group">
+                    <i class="fas fa-link"></i>
+                    <input type="text" id="room-link-input" placeholder="Paste room link to join existing room">
+                </div>
+                <button id="join-room-btn" class="room-option-btn secondary">
+                    <i class="fas fa-sign-in-alt"></i> Join Existing Room
+                </button>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> How it works:</h3>
+                <ul>
+                    <li>1. Register or login to create your identity</li>
+                    <li>2. Create a new chat room or join an existing one</li>
+                    <li>3. Share the unique room link with anyone you want to chat with</li>
+                    <li>4. Chat in real-time with text and photos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

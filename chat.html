@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header with Room Info & Share Link -->
+        <header class="chat-header">
+            <div class="room-info">
+                <h1><i class="fas fa-hashtag"></i> <span id="room-name">Chat Room</span></h1>
+                <div class="room-meta">
+                    <span class="user-badge"><i class="fas fa-user"></i> <span id="current-user">You</span></span>
+                    <span class="link-badge" id="room-id-display">ID: Loading...</span>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <!-- Share Link Section - THIS IS WHAT YOU NEED -->
+                <div class="share-link-box">
+                    <input type="text" id="shareable-link" readonly value="Generating your unique room link...">
+                    <button id="copy-link-btn" class="action-btn" title="Copy link to clipboard">
+                        <i class="fas fa-copy"></i> Copy Link
+                    </button>
+                    <button id="share-whatsapp-btn" class="action-btn" title="Share via WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                    <button id="share-telegram-btn" class="action-btn" title="Share via Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </button>
+                </div>
+                
+                <button id="invite-friends-btn" class="action-btn primary">
+                    <i class="fas fa-user-plus"></i> Invite Friends
+                </button>
+                <button id="logout-btn" class="action-btn logout">
+                    <i class="fas fa-sign-out-alt"></i> Exit
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Sidebar with Participants -->
+            <aside class="participants-sidebar">
+                <h3><i class="fas fa-users"></i> Online (<span id="online-count">1</span>)</h3>
+                <ul id="participants-list">
+                    <li><i class="fas fa-user-circle"></i> You (Host)</li>
+                    <!-- Other participants will appear here -->
+                </ul>
+                
+                <div class="room-actions">
+                    <h4><i class="fas fa-cog"></i> Room Actions</h4>
+                    <button id="new-room-btn" class="sidebar-btn">
+                        <i class="fas fa-plus"></i> Create New Room
+                    </button>
+                    <button id="view-all-rooms-btn" class="sidebar-btn">
+                        <i class="fas fa-list"></i> My Rooms
+                    </button>
+                </div>
+            </aside>
+            
+            <!-- Messages Area -->
+            <section class="messages-section">
+                <div class="messages-header">
+                    <h2><i class="fas fa-comments"></i> Chat Messages</h2>
+                    <button id="clear-chat-btn" class="small-btn">
+                        <i class="fas fa-trash"></i> Clear Chat
+                    </button>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Welcome Message -->
+                    <div class="message system">
+                        <div class="message-content">
+                            <p><i class="fas fa-door-open"></i> Welcome to your new chat room!</p>
+                            <p class="small">Share the link above to invite others to this conversation.</p>
+                            <p class="small">Room created: <span id="room-created-time">Just now</span></p>
+                        </div>
+                    </div>
+                    <!-- Messages will be loaded here -->
+                </div>
+                
+                <!-- Message Input Area -->
+                <div class="message-input-area">
+                    <div class="input-tools">
+                        <button id="emoji-btn" class="tool-btn" title="Emoji">
+                            <i class="far fa-smile"></i>
+                        </button>
+                        <button id="attach-file-btn" class="tool-btn" title="Attach File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="file" id="file-upload" accept="image/*,.pdf,.doc,.txt" hidden>
+                        <button id="photo-btn" class="tool-btn" title="Send Photo">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <input type="file" id="photo-upload" accept="image/*" capture="environment" hidden>
+                    </div>
+                    
+                    <div class="message-input-wrapper">
+                        <textarea id="message-input" placeholder="Type your message here... (Press Enter to send, Shift+Enter for new line)" rows="1"></textarea>
+                        <button id="send-message-btn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                    </div>
+                    
+                    <div class="upload-preview" id="upload-preview">
+                        <!-- Preview of files to be sent will appear here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Notification System -->
+        <div id="notification" class="notification">
+            <span id="notification-text"></span>
+        </div>
+        
+        <!-- Invite Modal -->
+        <div id="invite-modal" class="modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-share-alt"></i> Invite People to Chat</h2>
+                <p>Share this unique link with anyone you want to join this chat room:</p>
+                
+                <div class="invite-link-box">
+                    <input type="text" id="modal-share-link" readonly>
+                    <button id="modal-copy-btn" class="action-btn primary">
+                        <i class="fas fa-copy"></i> Copy Link
+                    </button>
+                </div>
+                
+                <div class="share-methods">
+                    <p>Share directly via:</p>
+                    <div class="share-buttons">
+                        <button class="share-method-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-method-btn telegram">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </button>
+                        <button class="share-method-btn email">
+                            <i class="fas fa-envelope"></i> Email
+                        </button>
+                        <button class="share-method-btn sms">
+                            <i class="fas fa-sms"></i> SMS
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="qr-section">
+                    <p>Or scan this QR code:</p>
+                    <div id="qr-code-container">
+                        <!-- QR Code will be generated here -->
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QR Code will appear here</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button id="close-modal-btn" class="action-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include QR Code library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
