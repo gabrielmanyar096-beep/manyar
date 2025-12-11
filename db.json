@@ -1,0 +1,49 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Global Climate Summit Reaches Historic Agreement",
+      "content": "World leaders have reached a groundbreaking agreement at the Global Climate Summit, committing to reduce carbon emissions by 50% by 2030. The deal includes significant funding for developing nations to transition to renewable energy sources.",
+      "category": "politics",
+      "author": "Sarah Johnson",
+      "imageUrl": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=1200&auto=format&fit=crop",
+      "createdAt": "2025-12-10T12:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Paris Fashion Week 2024: The Future of Sustainable Fashion",
+      "content": "Designers showcased innovative sustainable collections at Paris Fashion Week, featuring recycled materials and zero-waste patterns. The event highlighted the industry's shift towards eco-friendly practices.",
+      "category": "fashion",
+      "author": "Michael Chen",
+      "imageUrl": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&auto=format&fit=crop",
+      "createdAt": "2025-12-09T12:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "New Streaming Platform Challenges Netflix Dominance",
+      "content": "A new streaming service has launched with exclusive content partnerships, offering competitive pricing and unique features. Industry analysts predict significant market disruption.",
+      "category": "entertainment",
+      "author": "Emma Wilson",
+      "imageUrl": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1200&auto=format&fit=crop",
+      "createdAt": "2025-12-08T12:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "AI Breakthrough Revolutionizes Healthcare Diagnostics",
+      "content": "Researchers have developed an AI system that can diagnose diseases with 99% accuracy, potentially transforming healthcare delivery and reducing diagnostic errors worldwide.",
+      "category": "technology",
+      "author": "Dr. James Wilson",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&auto=format&fit=crop",
+      "createdAt": "2025-12-07T12:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "World Cup 2026: Stadiums Near Completion",
+      "content": "Construction of stadiums for the 2026 FIFA World Cup is 80% complete, with organizers promising the most technologically advanced tournament in history.",
+      "category": "sports",
+      "author": "Robert Martinez",
+      "imageUrl": "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=1200&auto=format&fit=crop",
+      "createdAt": "2025-12-06T12:00:00.000Z"
+    }
+  ]
+}
